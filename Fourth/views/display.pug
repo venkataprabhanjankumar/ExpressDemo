@@ -1,0 +1,88 @@
+doctype html
+html
+    head
+        title  Sample Title
+        style
+            include ./style.css
+        //link(type="text/css" rel="stylesheet" href="/css/mystyle.css") we can also include like this
+        script.
+            a=10;
+            if(a==10){
+                console.log(a)
+            }
+            console.log("Finished")
+    body
+        h1  Hello World
+        br
+        h3   #{myname}
+        a(href=url style={color : "red"}) click
+        //with class container and id div1
+        //space seperated
+        p This is Paragraph
+        -var classes = ['class1','class2','class3']
+        p(class=classes)
+        -var currentUrl = '/about'
+        a(class={active : currentUrl==='/about'} href="/about") About
+        br
+        a(class={active : currentUrl==='/home'} href='/home') Home
+        br
+        //mixims are like functions
+        mixin hello
+            p hii
+            p hello
+        +hello
+        +hello
+        mixin sample(a,b)
+            li #{a}
+            li #{b}
+        +sample("hii","hello")
+        +sample("holla",'hey')
+        ul
+        each val in classes
+            li #{val}
+        each v,index in classes
+            li #{index} : #{v}
+        -var hashmap = {1 : 'hello',2 : 'hiii'}
+        each myval,key in hashmap
+            li #{key} : #{myval}
+        -var i=0
+        while i<3
+            li #{i}
+            -i++
+
+        img(src="/images/image.jpg" alt="img" width="50px" height="50px")
+        //piped text
+        div.container#div1.
+            This Is Block Of Text
+            hello hii hello
+            this is prabhanjan
+        //block of text
+        div.mydiv.sample#div2 with classes mydiv and sample
+            | Using Piping Operator
+            |To insert MuiltLine Text
+        br
+        br
+        form(method="post" action="/routes1/demo" enctype="multipart/form-data")
+            div
+                input(type="hidden" name="_csrf" value=`${csrfToken}`)
+                label(for="name") Username:
+                input(type="text" name="username" placeholder="Username" required)
+                br
+                label(for="password") Password:
+                input(type="password" name="password" placeholder="Enter Password" required)
+                br
+                label(for="email") Email:
+                input(type="email" name="email" placeholder="Enter Email" required)
+                br
+                label(for="upload") UploadFile:
+                input(type="file" name="upload" placeholder="Upload File" accept="image/*" required)
+                br
+                input(type="submit" name="submit" value="Submit")
+        br
+        br
+        if(!myname)
+            h5 Name Is #{myname}
+        else
+            h4 hello Hii
+            //include can also be used to include plaintext, css and JavaScript.
+            include ./header.pug

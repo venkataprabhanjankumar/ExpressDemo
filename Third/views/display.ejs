@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sample Form</title>
+    </head>
+    <body>
+        <form action="/db/senddbdata" method="post">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <input type="text" name="firstName" placeholder="First Name"><br/><br/>
+            <input type="text" name="lastName" placeholder="Last Name"><br/><br/>
+            <input type="text" name="fullName" placeholder="Full Name"><br/><br/>
+            <input type="text" name="username" placeholder="Username" required><br/><br/>
+            <input type="password" name="passsword" placeholder="password" required><br/><br/>
+            <input type="email" name="email" placeholder="Email" required><br/><br/>
+            Gender : <br/><br/> Male <input type="radio" value="M" name="gender" required/>
+            Female <input type="radio" value="F" name="gender" required/><br/><br/>
+            Eating : <input type="checkbox" value="Eating" name="hobbies" /> Sleeping : <input type="checkbox"
+            value="Sleeping" name="hobbies" /> Playing :<input type="checkbox" value="Playing" name="hobbies"><br/><br/>
+            <input type="text" name="intrest1" placeholder="Category" required><br/><br/>
+            <input type="text" name="intrest2" placeholder="Intrest" required><br/><br/>
+            <input type="date" name="dob" placeholder="Dob" required><br/><br/>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

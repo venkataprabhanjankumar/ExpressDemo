@@ -3,7 +3,7 @@ var express = require('express')
 var {UsersDb,CategoriesDb} = require('./UserSchema')
 var mongoroute = express.Router();
 
-mongoose.connect("mongodb+srv://prabhanjan_kumar:prabhanjan7241@mycluster1.lhqpv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://username:password@mycluster1.lhqpv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {useNewUrlParser : true,useUnifiedTopology : true,useCreateIndex : true},function (err){
     if(err){
         throw err

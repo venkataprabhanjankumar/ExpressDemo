@@ -1,0 +1,28 @@
+doctype html
+head
+    title login
+body
+    if(sucess)
+        p Back to
+            a(href="/db/login") Login
+    form(action="/db/createuser" method="post")
+        input(type="hidden" name="_csrf" value=csrfToken readonly=true)
+        input(type="radio" name="usertype" value="admin" required=true)
+        |&nbsp;&nbsp;&nbsp;&nbsp; Admin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        input(type="radio" name="usertype" value="user")
+        | &nbsp&nbsp;&nbsp;&nbsp; User
+        br
+        br
+        input(type="text" name="username" placeholder="Username")
+        br
+        br
+        input(type="password" name="password" placeholder="Password")
+        br
+        br
+        input(type="email" name="email" placeholder="Email")
+        br
+        br
+        input(type="submit" value="Submit")
+
+    br
+    br
